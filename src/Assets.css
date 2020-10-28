@@ -1,0 +1,26 @@
+.Assets-top{
+    margin-bottom: 100px;
+}
+.container11{
+    display: flex;
+}
+.left-side{
+    /* display : inline-block; */
+    min-width: 100px;
+    /* width: 500px; */
+    /* height : 800px; */
+    /* border: solid 2px blue; */
+    display:none;
+    background-color: #1c2b2d;
+}
+.right-side{
+    /* display : inline-flex; */
+    /* width: auto; */
+    height : 1000px;
+    border : solid 2px green;
+}
+.graph1{
+    display:block;
+    height : 300px;
+    width : 800px;
+}

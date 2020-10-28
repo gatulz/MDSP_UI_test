@@ -1,0 +1,30 @@
+.assets1{
+    margin : 20px;
+    display: inline-block;
+    /* width : 800px; */
+    border : solid 2px red;
+    /* border-radius: 20px; */
+    
+    padding : 0 px;
+}
+table{
+    border : solid 2px green;
+}
+.assets1 th{
+    font-weight:bold;
+}
+.container-asset{
+    /* display: flex; */
+    position: relative;
+    align-self: start;
+    border : solid 2px;
+    border-radius: 20px;
+    padding :20px;
+    margin : 0 auto;
+}
+.titleAsset{
+    margin : 0px auto;
+}
+.table{
+    margin-top : 20px;
+}

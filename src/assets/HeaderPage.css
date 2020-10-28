@@ -1,0 +1,31 @@
+
+.header-page{
+    display: inline-block;
+    
+    width :100%;
+    /* color : red; */
+    background: #1c2b2d;
+    background-color: #1c2b2d;
+    color:#e6d5b8;
+}
+.assets-button{
+    display: inline-flex;
+    position: relative;
+    padding-top : 10px;
+    padding-bottom: 10px;
+    padding : 10px 20px;
+    color:#e6d5b8;
+    text-decoration: none;
+    font-family : sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    /* background: #1c2b2d;
+    background-color: #1c2b2d; */
+    /* background-color: black; */
+}
+.assets-button:hover{
+    background-color:white;
+}
+Link{
+    text-decoration: none;
+}

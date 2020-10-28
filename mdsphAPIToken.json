@@ -1,0 +1,106 @@
+{
+    "info": {
+      "_postman_id": "8b0ad76a-9f63-4946-9597-2443252645a0",
+      "name": "Application Credential Token Generation with Example",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Generate App Credential Bearer Token",
+        "event": [
+          {
+            "listen": "prerequest",
+            "script": {
+              "id": "7ed5b9aa-8e45-4d05-b1b4-6324300e6e8a",
+              "exec": [
+                "var id = '{Application Credential ID}';\r",
+                "var secret = '{ Application Credential Secret}';\r",
+                "pm.environment.set(\"base64token\", btoa(id + ':' + secret));"
+              ],
+              "type": "text/javascript"
+            }
+          },
+            {
+              "listen": "test",
+              "script": {
+                "id": "93b90d1f-2f5e-4487-a3f8-caac49b55cec",
+                "exec": [
+                  "var jsonData = pm.response.json();\r",
+                  "pm.globals.set(\"BearerToken\", 'Bearer ' + jsonData.access_token);"
+                ],
+                "type": "text/javascript"
+              }
+            }
+        ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-SPACE-AUTH-KEY",
+                "value": "Bearer {{base64token}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\t\"grant_type\": \"client_credentials\",\r\n\t\"appName\":\t\"{Application Name}\",\r\n\t\"appVersion\": \"{Application Version }\",\r\n\t\"hostTenant\": \"{Host Tenant Name}\",\r\n\t\"userTenant\": \"{User Tenant Name}\"\r\n} "
+            },
+            "url": {
+              "raw": "https://gateway.eu1.mindsphere.io/api/technicaltokenmanager/v3/oauth/token",
+              "protocol": "https",
+              "host": [
+                "gateway",
+                "eu1",
+                "mindsphere",
+                "io"
+              ],
+              "path": [
+                "api",
+                "technicaltokenmanager",
+                "v3",
+                "oauth",
+                "token"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Tenant Users ( IAM )",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "{{BearerToken}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "https://gateway.eu1-int.mindsphere.io/api/im/v3/Users",
+              "protocol": "https",
+              "host": [
+                "gateway",
+                "eu1-int",
+                "mindsphere",
+                "io"
+              ],
+              "path": [
+              "api",
+              "im",
+              "v3",
+              "Users"
+              ]
+            },
+            "description": "This API lists all the users of specific tenant"
+          },
+          "response": []
+        }
+    ],
+    "protocolProfileBehavior": {}
+  }
