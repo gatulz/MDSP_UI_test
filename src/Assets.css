@@ -1,5 +1,6 @@
 .Assets-top{
     margin-bottom: 100px;
+    /* overflow-x: scroll; */
 }
 .container11{
     display: flex;
@@ -16,11 +17,22 @@
 .right-side{
     /* display : inline-flex; */
     /* width: auto; */
-    height : 1000px;
-    border : solid 2px green;
+    min-height : 300px;
+    /* border : solid 2px green; */
 }
 .graph1{
-    display:block;
+    display:flex;
+    /* text-align: right; */
+    margin : 0 auto;
+    /* padding : 0 auto; */
+    /* text-align: center; */
+    /* margin-right : 100px; */
     height : 300px;
-    width : 800px;
+    width : 500px;
+}
+.graph-asset{
+    /* margin-right: 200px; */
+    /* padding-right: 100px; */
+    /* margin : 0; */
+
 }

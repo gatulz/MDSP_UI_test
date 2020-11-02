@@ -1,19 +1,10 @@
 import React from "react";
 import {useState } from "react";
 import "./AssetComponent.css";
+import {Bar} from 'react-chartjs-2';
 
-import {Line} from 'react-chartjs-2';
-
-let dataTest={
-    data1:100,
-    data2:200,
-    data3:300,
-    data4:400
-} 
-
-let dataTest1 = [100,200,300,400];
-function AssetGraph(props){
-    const [dataGraph, setDataGraph]= useState({
+function AssetBar(props){
+    const [dataBar, setDataBar]= useState({
         labels: props.labels,
         datasets: [
             {
@@ -34,11 +25,11 @@ function AssetGraph(props){
         <div className="assets1">
             <div className="container-asset">
                 <h1 className="titleAsset">{props.name}</h1>
-                <Line 
+                <Bar 
                     // className="graph-asset"
-                    data={dataGraph} 
-                    height={350} 
-                    width={500}
+                    data={dataBar} 
+                    height={400} 
+                    width={700}
                     // style={"height:200px;width:400px;"}
                     options={{maintainAspectRatio: true }}
                 />
@@ -50,4 +41,4 @@ function AssetGraph(props){
     )
 }
 
-export default AssetGraph;
+export default AssetBar;

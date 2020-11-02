@@ -1,25 +1,22 @@
 .assets1{
     margin : 20px;
     display: inline-block;
-    /* width : 800px; */
-    /* border : solid 2px red; */
-    /* border-radius: 20px; */
-    
     padding : 0 px;
-}
-table{
-    /* border : solid 2px green; */
 }
 .assets1 th{
     font-weight:bold;
 }
-.container-asset{
+.container-textbox{
     /* display: flex; */
     position: relative;
     align-self: start;
     border : solid 2px;
     border-radius: 20px;
     padding :20px;
+    overflow:auto;
+    width: 200px;
+    height: 200px;
+    /* bottom: 0; */
     margin : 0 auto;
 }
 .titleAsset{
